@@ -14,4 +14,4 @@ https://huggingface.co/datasets/fancyzhx/yelp_polarity/viewer/plain_text/train?q
 
 
 
-![screenshot](imageFolder/shot_word.png)
+![shot_word](shot_word.png)
