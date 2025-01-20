@@ -16,7 +16,7 @@ import json
 from preprocess import process
 
 # Load the corpus and word2index
-with open('./Model_corpus/corpus.json', 'r') as fp:
+with open('Model_corpus/corpus.json', 'r') as fp:
     corpus = json.load(fp)
 
 def pop_numeric(tokens):
@@ -35,7 +35,7 @@ for doc in corpus:
     corpus[doc] = pop_numeric(corpus[doc])
 
 # Load word2index
-word2index = np.load('./Model_corpus/word2index.npy', allow_pickle=True).item()
+word2index = np.load('Model_corpus/word2index.npy', allow_pickle=True).item()
 
 def rpuncst(x):
     stop_words = set(stopwords.words('english'))
