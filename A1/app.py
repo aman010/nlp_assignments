@@ -16,7 +16,7 @@ import json
 from preprocess import process
 
 # Load the corpus and word2index
-with open('Model_corpus/corpus.json', 'r') as fp:
+with open('corpus.json', 'r') as fp:
     corpus = json.load(fp)
 
 def pop_numeric(tokens):
