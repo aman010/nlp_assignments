@@ -48,14 +48,14 @@ def rpuncst(x):
 def search_callback(query, model_type):
     if model_type == 'skipGram':
         model = SkipgramNeg(8743, 2)
-        model.load_state_dict(torch.load('Model_corpus/neg_samples', weights_only=True, map_location=torch.device('cpu')))
+        model.load_state_dict(torch.load('A1/Model_corpus/neg_samples', weights_only=True, map_location=torch.device('cpu')))
         model.eval()  # Set the model to evaluation mode
         p = process(corpus, model, word2index)
         result = p.find_most_similar_documents(str(query), corpus)
 
     if model_type == 'Glove':
         model = Glove(8743, 2)
-        model.load_state_dict(torch.load('Model_corpus/glove', weights_only=True))
+        model.load_state_dict(torch.load('A1/Model_corpus/glove', weights_only=True))
         model.eval()  # Set the model to evaluation mode
         p = process(corpus, model, word2index)
         result = p.find_most_similar_documents(str(query), corpus)
