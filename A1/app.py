@@ -5,13 +5,10 @@ Created on Sat Jan 18 06:50:31 2025
 """
 
 import streamlit as st
-import nltk
-from nltk.corpus import stopwords
-from nltk.stem import PorterStemmer
-import numpy as np
+import json
 import torch 
 from Models import Glove, SkipgramNeg
-import json
+import numpy as np
 from preprocess import process
 import streamlit.components.v1 as components
 
@@ -21,7 +18,7 @@ with open('A1/Model_corpus/corpus.json', 'r') as fp:
 
 @st.cache_data
 def download_nltk_data():
-    """Download required NLTK data."""
+    import nltk
     nltk.download('stopwords')
     nltk.download('punkt')
 
@@ -53,6 +50,8 @@ def rpuncst(x):
     """
     Remove punctuation, stopwords, and stems the tokens.
     """
+    from nltk.corpus import stopwords
+    from nltk.stem import PorterStemmer
     stop_words = set(stopwords.words('english'))
     stemmer = PorterStemmer()
     tokens = [token for token in x if token.isalnum() and token.lower() not in stop_words]
@@ -84,7 +83,7 @@ def app():
     """Main Streamlit app function."""
     st.title("Text Search with Word2Vec, Skipgram, and Glove Models")
 
-    # Render HTML for better UI (if needed, e.g., static elements, styled content)
+    # Read the HTML content from a file or as a string
     try:
         with open('A1/templates/index.html', 'r') as f:
             html_content = f.read()
@@ -92,10 +91,8 @@ def app():
     except FileNotFoundError:
         st.warning("HTML file not found! Proceeding with basic app UI.")
 
-    # Input for search query
+    # Handle the search and model logic
     query = st.text_input("Enter your query:")
-
-    # Select model type
     model_type = st.selectbox("Select Model", ("skipGram", "Glove"))
 
     if st.button("Search"):
