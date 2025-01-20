@@ -28,7 +28,7 @@ def download_nltk_data():
 download_nltk_data()
 
 # Read the contents of the HTML file
-with open('index.html', 'r') as f:
+with open('A1/templates/index.html', 'r') as f:
     html_content = f.read()
 
 # Display the HTML content in Streamlit
