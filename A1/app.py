@@ -14,6 +14,7 @@ from Models import Glove
 from Models import SkipgramNeg
 import json
 from preprocess import process
+import streamlit.components.v1 as components
 
 # Load the corpus and word2index
 with open('A1/Model_corpus/corpus.json', 'r') as fp:
@@ -30,6 +31,13 @@ download_nltk_data()
 # Read the contents of the HTML file
 with open('A1/templates/index.html', 'r') as f:
     html_content = f.read()
+
+with open('A1/templates/index.html', 'r') as f:
+    html_content = f.read()
+
+# Display the HTML file
+components.html(html_content)
+
 
 # Display the HTML content in Streamlit
 st.markdown(html_content, unsafe_allow_html=True)
