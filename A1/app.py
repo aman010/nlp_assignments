@@ -19,6 +19,15 @@ from preprocess import process
 with open('A1/Model_corpus/corpus.json', 'r') as fp:
     corpus = json.load(fp)
 
+@st.cache_data
+def download_nltk_data():
+    nltk.download('stopwords')
+    nltk.download('punkt')
+
+# Call the function at the start of your app
+download_nltk_data()
+
+
 def pop_numeric(tokens):
     """
     Pops numeric tokens from the list and keeps only non-numeric tokens.
