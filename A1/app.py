@@ -35,7 +35,7 @@ for doc in corpus:
     corpus[doc] = pop_numeric(corpus[doc])
 
 # Load word2index
-word2index = np.load('Model_corpus/word2index.npy', allow_pickle=True).item()
+word2index = np.load('./Model_corpus/word2index.npy', allow_pickle=True).item()
 
 def rpuncst(x):
     stop_words = set(stopwords.words('english'))
