@@ -33,8 +33,7 @@ with open('A1/templates/index.html', 'r') as f:
     html_content = f.read()
 
 # Display the HTML file
-components.html(html_content)
-
+components.html(html_content, height=800)
 
 def pop_numeric(tokens):
     """
