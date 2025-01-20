@@ -5,7 +5,7 @@ import json
 import numpy as np
 import torch
 from Models import Glove, SkipgramNeg
-from A1.preprocess import process
+from preprocess import process
 
 # Set base path for file management
 BASE_PATH = os.path.dirname(__file__)  # Directory of the script
