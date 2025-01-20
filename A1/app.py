@@ -32,15 +32,9 @@ download_nltk_data()
 with open('A1/templates/index.html', 'r') as f:
     html_content = f.read()
 
-with open('A1/templates/index.html', 'r') as f:
-    html_content = f.read()
-
 # Display the HTML file
 components.html(html_content)
 
-
-# Display the HTML content in Streamlit
-st.markdown(html_content, unsafe_allow_html=True)
 
 def pop_numeric(tokens):
     """
