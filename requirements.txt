@@ -1,6 +1,6 @@
-streamlit
-nltk
-numpy
-torch
-gensim
-pandas
+streamlit==1.19.0
+nltk==3.7
+numpy==1.24.0
+torch==1.13.0
+gensim==4.2.0
+pandas==1.5.3
