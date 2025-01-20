@@ -12,7 +12,7 @@ BASE_PATH = os.path.dirname(__file__)  # Directory of the script
 HTML_PATH = os.path.join(BASE_PATH, 'A1/templates/index.html')  # Adjust path as needed
 
 # Read and render the HTML file
-with open(HTML_PATH, 'r') as f:
+with open('A1/templates/index.html', 'r') as f:
     html_content = f.read()
 
 # Display the HTML file using Streamlit's components
