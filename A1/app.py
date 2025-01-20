@@ -27,6 +27,12 @@ def download_nltk_data():
 # Call the function at the start of your app
 download_nltk_data()
 
+# Read the contents of the HTML file
+with open('index.html', 'r') as f:
+    html_content = f.read()
+
+# Display the HTML content in Streamlit
+st.markdown(html_content, unsafe_allow_html=True)
 
 def pop_numeric(tokens):
     """
